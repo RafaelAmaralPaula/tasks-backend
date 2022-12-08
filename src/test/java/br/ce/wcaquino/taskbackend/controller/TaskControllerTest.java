@@ -1,6 +1,5 @@
-package controller;
+package br.ce.wcaquino.taskbackend.controller;
 
-import br.ce.wcaquino.taskbackend.controller.TaskController;
 import br.ce.wcaquino.taskbackend.model.Task;
 import br.ce.wcaquino.taskbackend.repo.TaskRepo;
 import br.ce.wcaquino.taskbackend.utils.ValidationException;
