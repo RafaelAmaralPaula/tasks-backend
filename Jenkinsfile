@@ -69,6 +69,7 @@ pipeline{
         }
         stage('HealthCheck'){
             steps{
+                sleep(5)
                 dir('functional-test'){
                     bat 'mvn verify'
                 }
