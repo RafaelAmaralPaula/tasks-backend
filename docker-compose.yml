@@ -50,7 +50,7 @@ services:
       - BACKEND_HOST=backend
       - BACKEND_PORT=8080
       - APP_VERSION=${BUILD_NUMBER}
-    depends_on:
+    # depends_on:
      #  - backend
 
 networks:
