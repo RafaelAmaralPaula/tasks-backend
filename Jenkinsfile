@@ -67,11 +67,12 @@ pipeline{
                 bat 'docker-compose up -d'
             }
         }
-        stage('HealthCheck'){
+        stage('Health Check'){
             steps{
                 sleep(5)
-                dir('functional-test'){
-                    bat 'mvn verify'
+                dir('healthcheck-test'){
+                    git 'https://github.com/RafaelAmaralPaula/tasks-healthcheck'
+                    bat 'mvn test'
                 }
             }
         }
