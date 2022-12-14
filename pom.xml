@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.ce.wcaquino</groupId>
 	<artifactId>tasks-backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>tasks-backend</name>
 	<packaging>war</packaging>
 	<description>A very simple task management tool</description>
