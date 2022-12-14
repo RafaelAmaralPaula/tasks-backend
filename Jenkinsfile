@@ -69,12 +69,16 @@ pipeline{
         }
         stage('Health Check'){
             steps{
-                sleep(5)
                 dir('healthcheck-test'){
                     git 'https://github.com/RafaelAmaralPaula/tasks-healthcheck'
                     bat 'mvn test'
                 }
             }
+        }
+    }
+    post{
+        always{
+            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml , functional-test/target/surefire-reports/*.xml , api-test/target/surefire-reports/*.xml , healthcheck/target/surefire-reports/*.xml'
         }
     }
 }
