@@ -61,6 +61,11 @@ pipeline{
                 }
             }
         }
+        stage('Upload War to Nexus'){
+            steps{
+                nexusArtifactUploader artifacts: [[artifactId: 'tasks-backend', classifier: '', file: 'target/tasks-backend-0.0.1.war', type: 'war']], credentialsId: 'NEXUS', groupId: 'br.ce.wcaquino', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://localhost:8081/repository/tasks-app/', version: '0.0.1'
+            }
+        }
         stage('Deploy Prod'){
             steps{
                 bat 'docker-compose build'
